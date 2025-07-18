@@ -130,8 +130,20 @@ MAVEN
 ```
 6. ```mvn package```
 7. ```mvn deploy```
+
 -----
-### D Setup Cleanup Policies
+### D Query Nexus with API
+check repos available:
+- ```curl -u user:pwd -X GET ‘http://http://46.101.244.20:8081/service/rest/v1/repositories'```
+
+check components available in specific repo:
+- ```curl -u user:pwd -X GET 'http://46.101.244.20:8081/service/rest/v1/components?repository=maven-snapshots'```
+
+check specific component:
+- ```curl -u user:pwd -X GET 'http://46.101.244.20:8081/service/rest/v1/components/<component_id>’```
+
+---
+### E Setup Cleanup Policies
 Setup rules to remove old or unused components.
 1. Create resource policy
 2. Associate resource to repo
